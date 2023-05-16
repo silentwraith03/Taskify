@@ -1,11 +1,10 @@
 ## Project Overview
-This is a simple tasks website built using the Flask web framework. The website allows users to create, update, and delete tasks. Users can also mark tasks as completed and view a list of all tasks.
+This is a simple tasks website built using the Flask web framework. The website allows users to create, update, and delete tasks. 
 
 ## Features
 * Create new tasks.
 * Update existing tasks.
 * Delete tasks.
-* Mark tasks as completed.
 * View a list of all tasks.
 
 ## Prerequisites
@@ -17,7 +16,7 @@ Before running the tasks website, make sure you have the following installed:
 ## Installation
 1. Clone the repository or download the source code.
 ```bash
-git clone https://github.com/silentwraith03/Taskify.git
+git clone https://github.com/silentwraith03/taskify.git
 ```
 2. Navigate to the project directory.
 ```bash
@@ -40,7 +39,7 @@ source venv/bin/activate
 ```bash
 python app.py
 ```
-6. Open your web browser and visit http://localhost:5000/ to access the polls website
+6. Open your web browser and visit http://localhost:5000/ to access the tasks website
 
 ## Project Structure
 ```arduino
