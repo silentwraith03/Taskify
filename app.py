@@ -13,50 +13,65 @@ class Todo(db.Model):
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     
     def __repr__(self):
-        return '<Task %r>' % self.id
+        return '<question %r>' % self.id
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        task_content = request.form['content']
-        new_task = Todo(content=task_content)
+        question_content = request.form['content']
+        new_question = Todo(content=question_content)
         
         try:
-            db.session.add(new_task)
+            db.session.add(new_question)
             db.session.commit()
             return redirect('/')
         except:
-            return "There was an issue adding your task"
+            return "There was an issue adding your question"
     
     else:
-        tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('index.html', tasks=tasks)
+        questions = Todo.query.order_by(Todo.date_created).all()
+        return render_template('index.html', questions=questions)
+    
+@app.route('/answer/<int:id>', methods=['GET','POST'])
+def answer(id):
+    question = Todo.query.get_or_404(id)
+    
+    if request.method == 'POST':
+        question.content = request.form['content']
+        
+        try:
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'There was an issue adding answer'
+    else:
+        return render_template('answer.html', question=question)
     
 @app.route('/delete/<int:id>')
 def delete(id):
-    task_to_delete = Todo.query.get_or_404(id)
+    question_to_delete = Todo.query.get_or_404(id)
     
     try:
-        db.session.delete(task_to_delete)
+        db.session.delete(question_to_delete)
         db.session.commit()
         return redirect('/')
     except:
-        return 'There was a problem deleting that task'
+        return 'There was a problem deleting that question'
     
 @app.route('/update/<int:id>', methods=['GET','POST'])
 def update(id):
-    task = Todo.query.get_or_404(id)
+    question = Todo.query.get_or_404(id)
     
     if request.method == 'POST':
-        task.content = request.form['content']
+        question.content = request.form['content']
         
         try:
             db.session.commit()
             return redirect('/')
         except:
-            return 'There was an issue updating your task'
+            return 'There was an issue updating your question'
     else:
-        return render_template('update.html', task=task)
+        return render_template('update.html', question=question)
 
 if __name__ == "__main__":
     app.run(debug = True)
