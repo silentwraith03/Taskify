@@ -1,7 +1,8 @@
 body, html {
     margin: 0;
     font-family: sans-serif;
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 
 .content {
@@ -10,12 +11,13 @@ body, html {
 }
 
 table, td, th {
-    border: 1px solid #aaa;
+    border: 1px solid lavender;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-bottom: 10%;
 }
 
 th {
