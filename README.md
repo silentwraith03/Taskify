@@ -66,6 +66,7 @@ taskify/
 * HTML
 * CSS
 * JavaScript
+* SQLite
 
 ## License
 [MIT](LICENSE)
