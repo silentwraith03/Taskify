@@ -16,7 +16,7 @@ Before running the tasks website, make sure you have the following installed:
 ## Installation
 1. Clone the repository or download the source code.
 ```bash
-git clone https://github.com/silentwraith03/taskify.git
+git clone https://github.com/silentwraith03/Taskify.git
 ```
 2. Navigate to the project directory.
 ```bash
