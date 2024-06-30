@@ -20,7 +20,7 @@ git clone https://github.com/silentwraith03/Taskify.git
 ```
 2. Navigate to the project directory.
 ```bash
-cd taskify
+cd Taskify
 ```
 3. Create a virtual environment.
 ```bash
